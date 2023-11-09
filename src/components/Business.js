@@ -1,29 +1,22 @@
-import React from 'react';
-
-const b = {
-    imageSrc : "https://content.codecademy.com/programs/react/ravenous/pizza.jpg",
-    name: "MarginOtto Pizzeria",
-    address: "1010 Paddington Way",
-    city: "Bordertown",
-    state: "NY",
-    zipCode: "10101",
-    category: "ITALIAN",
-    rating: 4.5,
-    reviewCount: 90 
-};
+import React from "react";
 
 const Business = (props) => {
-    return (
+  return (
+    <div>
+      <img src={props.business.imageSrc} alt="From business" />
+      <div>
+        <div>{props.business.name}</div>
+        <div>{props.business.address}</div>
+        <div>{props.business.category}</div>
+        <div>{props.business.city}</div>
+        <div>{props.business.rating}</div>
         <div>
-            <img src={b.imageSrc} alt="From business" />
-            <div>
-                <div>{b.name}</div>
-                <div>{b.address}</div><div>{b.category}</div>
-                <div>{b.city}</div><div>{b.rating}</div>
-                <div>{b.state} {b.zipCode}</div><div>{b.reviewCount} reviews</div>
-            </div>
+          {props.business.state} {props.business.zipCode}
         </div>
-    );
+        <div>{props.business.reviewCount} reviews</div>
+      </div>
+    </div>
+  );
 };
 
 export default Business;
